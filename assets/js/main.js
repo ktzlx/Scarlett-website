@@ -254,3 +254,69 @@ themeButton.addEventListener('click', () => {
 function zoom(element){
     element.classList.toggle('fullsize');
 }
+/*--------------------send -----------------------------
+function sendMail(){
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        project: document.getElementById("project").value,
+        description: document.getElementById("description").value,
+    };
+
+    const serviceID = "service_h7g894q";
+    const templateID = "template_g1fi91k";
+
+    emailjs
+        .send(serviceID,templateID,params)
+        .then(res =>{
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("project").value = "";
+            document.getElementById("description").value = "";
+            console.log(res);
+            alert("your message sent succesfully");
+        })
+        .catch((err) => console.log(err));
+}*/
+function sendMail(){
+    let parms = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        project: document.getElementById("project").value,
+        description: document.getElementById("description").value,
+    }
+     var name = document.getElementById("name").value;
+     var email = document.getElementById("email").value;
+     var project = document.getElementById("project").value;
+     var description = document.getElementById("description").value;    
+
+    if (!name||!project||!description||!email.includes("@")||!email.includes(".")
+        ){
+       alert("Please fill in all fields");
+     }else {
+       emailjs.send("service_h7g894q","template_g1fi91k",parms)
+        .then(alert("Your message sent succesfully"))
+     }
+    
+}
+
+function check(e) {
+    // the 2 lines below will stop the default form submit action
+     e.preventDefault();
+     e.stopPropagation();
+
+     var name = document.getElementById("name").value;
+     var email = document.getElementById("email").value;
+     var project = document.getElementById("project").value;
+     var description = document.getElementById("description").value;
+
+     if (name.length===0||
+        email.length===0||
+        project.length===0||
+        description.length===0
+        ){
+       alert("Please fill in all fields");
+     }else {
+       sendMail();
+     }
+   }

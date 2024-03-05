@@ -14,6 +14,28 @@
         <link rel="stylesheet" href="assets/css/styles.css">
 
         <title>Responsive Portfolio Website</title>
+
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init({
+                publicKey: "Jnhl5YDTG9QFfQC6e",
+            });
+        })();
+        </script>
+
+        
+        <!--<script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        </script>
+
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("Jnhl5YDTG9QFfQC6e");
+            });();
+        </script>-->
     </head>
     <body>
         <!--==================== HEADER ====================-->
@@ -1630,7 +1652,43 @@
                         </div>
                     </div>
 
-                    <form class="contact__form grid"
+
+
+                    <!--==================org Form=
+                        
+                        action=""================================-->
+                    <form class="contact__form grid">
+                        <div class="contact__inputs grid">
+                            <div class="contact__content">
+                                <label for="name" class="contact__label">Name</label>
+                                <input type="text" class="contact__input" id="name" name="name" required>
+                            </div>
+                            <div class="contact__content">
+                                <label for="email" class="contact__label">Email</label>
+                                <input type="email" class="contact__input" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="contact__content">
+                            <label for="project" class="contact__label">Project</label>
+                            <input type="text" class="contact__input" id="project" name="project" required>
+                        </div>
+                        <div class="contact__content">
+                            <label for="description" class="contact__label">Message</label>
+                            <textarea name="description" id="description" cols="30" rows="7" class="contact__input" required></textarea>
+                        </div>
+
+                        <div>
+                            <button class="button button--flex" onclick="sendMail()" type="submit">Send message
+                                <i class="uil uil-message button__icon"></i>
+                            </button>
+                            <!--<a href="#" class="button button--flex">
+                                Send Message
+                                <i class="uil uil-message button__icon"></i>
+                            </a>-->
+                        </div>
+                    </form>
+                    <!--===================Form with GetForm================================-->
+                    <!--<form class="contact__form grid"
                     action="https://getform.io/f/a3e508f0-a89a-40f6-a2a1-c1e99a8ecaf9" method="POST" enctype="multipart/form-data">
                         <div class="contact__inputs grid">
                             <div class="contact__content">
@@ -1655,12 +1713,12 @@
                             <button class="button button--flex" type="submit">Send message
                                 <i class="uil uil-message button__icon"></i>
                             </button>
-                           <!-- <a href="#" class="button button--flex">
+                           -- <a href="#" class="button button--flex">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
-                            </a>-->
+                            </a>--
                         </div>
-                    </form>
+                    </form>-->
                 </div>
             </section>
         </main>
